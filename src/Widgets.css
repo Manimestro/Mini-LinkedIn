@@ -1,0 +1,43 @@
+.Widgets{
+    position: sticky;
+    top: 80px;
+    flex: 0.2;
+    background-color: white;
+    border-radius: 10px;
+    height: fit-content;
+    padding-bottom: 10px;
+    border: 1px solid lightgray;
+}
+.WidgetHead{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+.WidgetHead>h2{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+.widgetNews{
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+}
+.widgetNews:hover{
+    background-color: whitesmoke;
+}
+.newsLeft{
+    margin-left: 5px;
+    color: #0177b7;
+    font-size: 2px !important;
+}
+.newsLeft >.MuiSvgIcon-root{
+    font-size: 15px;
+    margin-top: 3px;
+}
+.newsRight >p{
+    color: grey;
+}
+

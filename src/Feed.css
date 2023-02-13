@@ -1,0 +1,41 @@
+.Feed{
+    flex: 0.6;
+
+    margin: 0 20px;
+
+}
+.IconsOptions{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.Postdiv{
+    background-color: white;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.Startapost{
+    border:  solid lightgray 1px;
+    border-radius: 30px;
+    display: flex;
+    padding: 10px;
+    color: grey;
+    padding-left: 15px;
+}
+.Startapost >form{
+    display: flex;
+    width: 100%;
+    border: none;
+}
+.Startapost >form>input{
+    outline-width: 0;
+    border:none;
+    flex: 1;
+    margin-left: 10px;
+    font-weight: 600;
+}
+.Startapost >form>button{
+    display: none;
+}

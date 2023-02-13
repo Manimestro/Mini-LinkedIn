@@ -1,0 +1,42 @@
+.Post{
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.PostHead{
+    display: flex;
+    margin-bottom: 10px;
+}
+.Postinfo{
+    margin-left: 10px;
+}
+.Postinfo >p{
+    font-size: 12px;
+    color: grey;
+}
+.PostBody{
+    overflow-wrap: anywhere;
+}
+.Postinfo>h2{
+    font-size: 15px;
+}
+.IconGenerate{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.IconGenerate:hover{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    background-size: cover;
+    
+}
+.IconGenerate>h4{
+    margin-left: 5px ;
+}
+.LikeShare{
+    display: flex;
+    justify-content: space-evenly;
+}
