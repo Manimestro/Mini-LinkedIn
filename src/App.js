@@ -15,7 +15,6 @@ function App() {
   const dispatcher=useDispatch();
   const user=useSelector((state)=>(state.user.user))
   useEffect(()=>{
-    console.log("hey useeffect")
     onAuthStateChanged(Auth,(cred)=>{
       console.log(cred)
       cred ? dispatcher(login(
@@ -34,7 +33,7 @@ function App() {
     }))
     })
   }
-  ,[])
+  ,[dispatcher])
   return (
     <div className="App">
      {user.loger ? (<Login />) :console.log("not loged")}

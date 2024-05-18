@@ -1,7 +1,6 @@
 import { Avatar } from '@mui/material'
 import React from 'react'
 import './Sidebar.css'
-import myimg from'./myimg.png'
 import { useSelector } from 'react-redux'
 function Sidebar() {
     const details=useSelector(state=>state.user.user)

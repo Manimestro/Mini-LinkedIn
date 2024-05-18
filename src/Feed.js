@@ -8,8 +8,8 @@ import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Post from "./Post";
 import { refre} from "./firebase";
-import { getDocs,onSnapshot,addDoc, query ,orderBy,
-    serverTimestamp , getDoc
+import { onSnapshot,addDoc, query ,orderBy,
+    serverTimestamp 
 } from "firebase/firestore";
 import { useSelector } from "react-redux";
 import FlipMove from 'react-flip-move'
@@ -17,12 +17,13 @@ const Feed=()=>{
     const details=useSelector((state)=>state.user.user)
     const refres=query(refre,orderBy("dateandtime","desc"))
     const[input,setinput]=useState("")
-    const IconGenerate=(Icon,text,color)=>(
+    const IconGenerate=(Icon,text,color)=>
         <div className="IconGenerate">
         <Icon style={{color:color}}/>
         <h4>{text}</h4>
         </div>
-    )
+        
+    
     const [posts,setposts]=useState([]);
     const PostAdder=()=>{
         console.log(input)
@@ -31,7 +32,8 @@ const Feed=()=>{
             discrip:details.email,
             message:input,
             dateandtime:serverTimestamp(),
-            images:details.profilepic
+            images:details.profilepic,
+            firstLetter:details.displayName[0]
         })
         setinput("")
     }
@@ -44,18 +46,16 @@ const Feed=()=>{
                     data:snap.data(),
                     
                 }
-                
-               
         )))
         
         }
            )
-    },[])
+    },)
     return(
     <div className="Feed">
         <div className="Postdiv">
             <div className="Startapost">
-                <CreateIcon/>
+               <CreateIcon/>
                 <form onSubmit={(Event)=>{
                     Event.preventDefault();
                     PostAdder()
@@ -71,7 +71,7 @@ const Feed=()=>{
                 </form>
             </div>
             <div className="IconsOptions">
-                {IconGenerate(ImageIcon,"Photo","#7085F9")}
+            {IconGenerate(ImageIcon,"Photo","#7085F9")}
                 {IconGenerate(SubscriptionsIcon,"Vedio","#E7A33E")}
                 {IconGenerate(EventNoteIcon,"Event","#C0CBCD")}
                 {IconGenerate(CalendarViewDayIcon,"Write article","#7EC15E")}
@@ -79,10 +79,10 @@ const Feed=()=>{
         </div>
         <FlipMove>
             {
-            posts.map(({id,data})=>(           
-                           <Post name={data.name} descrip={data.discrip} 
-                           message={data.message} key={id} ourimage={data.images} />    
-            )
+            posts.map(({id,data})=>{  
+                            data={...data , id:id}        
+                           return( <Post {...data} /> )
+            }
             )}
             </FlipMove>
     </div>

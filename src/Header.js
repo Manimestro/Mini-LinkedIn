@@ -7,7 +7,7 @@ import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import myimg from'./myimg.png'
+
 import { signOut } from 'firebase/auth';
 import { Auth } from './firebase';
 import { useDispatch } from 'react-redux';

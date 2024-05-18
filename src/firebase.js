@@ -12,7 +12,8 @@
 
 import { initializeApp } from "firebase/app";
 import { getFirestore ,collection ,getDocs,query,orderBy,where ,getDoc ,doc, onSnapshot, addDoc, deleteDoc, serverTimestamp, updateDoc, Firestore} from "firebase/firestore";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithCredential, signInWithEmailAndPassword, signOut, updateProfile} from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth,} from "firebase/auth";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBkPFn0Om45QWua2agM5jWVp1pIrIHzr-4",
   authDomain: "linkedin-22b5e.firebaseapp.com",
@@ -21,6 +22,7 @@ const firebaseConfig = {
   messagingSenderId: "521558694397",
   appId: "1:521558694397:web:ca9f8c9b98e17df92c2194"
 };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 //auth

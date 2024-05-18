@@ -7,7 +7,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import SendIcon from '@mui/icons-material/Send';
 import { useSelector } from 'react-redux';
 
-const Post=forwardRef(({name,descrip,message,ourimage},ref)=> {
+const Post=forwardRef(({name,discrip,message,images,firstLetter},ref)=> {
     const user=useSelector((state)=>(state.user.user))
     const IconGenerate=(Icon,text,color)=>(
         <div className="IconGenerate">
@@ -18,10 +18,10 @@ const Post=forwardRef(({name,descrip,message,ourimage},ref)=> {
   return (
     <div ref={ref} className='Post'>
         <div className='PostHead'>
-            <Avatar src={ourimage}>{user?.email[0]} </Avatar>
+            <Avatar src={images}>{firstLetter} </Avatar>
             <div className='Postinfo'>
                 <h2>{name}</h2>
-                <p>{descrip}</p>
+                <p>{discrip}</p>
             </div>
         </div>
         <div className='PostBody'>
